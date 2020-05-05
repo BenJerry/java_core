@@ -2,7 +2,7 @@ package org.example;
 
 /**
  * Hello world!
- *
+ * some changes to test git
  */
 public class App 
 {
