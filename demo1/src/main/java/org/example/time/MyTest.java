@@ -36,9 +36,18 @@ public class MyTest {
 
     public static void testDateFormat() {
         Date d = new Date();
-        String s = StringUtils.formatDate(d, "%tc%n");
+        String s = StringUtils.formatDate(d, "全部日期和时间信息：%tc%n");
         System.out.println(s);
-
+        s = StringUtils.formatDate(d, "年-月-日 格式：%tF%n");
+        System.out.println(s);
+        s = StringUtils.formatDate(d, "月/日/年 格式：%tD%n");
+        System.out.println(s);
+        s = StringUtils.formatDate(d, "HH:MM:SS PM格式（12时制）：%tr%n");
+        System.out.println(s);
+        s = StringUtils.formatDate(d, "HH:MM:SS PM格式（24时制）：%tT%n");
+        System.out.println(s);
+        s = StringUtils.formatDate(d, "HH:MM格式（24时制）：%tR");
+        System.out.println(s);
     }
 
 }
