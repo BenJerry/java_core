@@ -2,6 +2,7 @@ package org.example.time;
 
 import org.example.string.StringUtils;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -22,6 +23,8 @@ public class MyTest {
         testDateParse();
         System.out.println("-----------------------------------------------");
         testDateFormat();
+        System.out.println("-----------------------------------------------");
+        testCalendar();
     }
 
     public static void testDateParse() {
@@ -48,6 +51,31 @@ public class MyTest {
         System.out.println(s);
         s = StringUtils.formatDate(d, "HH:MM格式（24时制）：%tR");
         System.out.println(s);
+        s = String.format(Locale.US, "英文月份简称：%tb", d);
+        System.out.println(s);
+        s = String.format(Locale.US, "英文月份全称：%tB", d);
+        System.out.println(s);
+        System.out.printf("本地月份简称：%tb%n", d);
+        System.out.printf("本地月份全称：%tB%n", d);
+        System.out.printf("当前日期时一年中的第几天：%tj%n", d);
+        System.out.printf("本地星期的简称：%tA%n", d);
+        System.out.printf("年的前两位数字（不足两位前面补0）：%tC%n", d);
+        System.out.printf("年的后两位数字（不足两位前面补0）：%ty%n", d);
+        System.out.printf("两位数字的月份（不足两位前面补0）：%tm%n", d);
+        System.out.printf("两位数字的日（不足两位前面补0）：%td%n", d);
+        System.out.printf("两位数字的日（不补0）：%te%n", d);
+    }
+
+    public static void testCalendar() {
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH) + 1;
+        int date = calendar.get(Calendar.DAY_OF_MONTH);
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
+        int second = calendar.get(Calendar.SECOND);
+        int day = calendar.get(Calendar.DAY_OF_WEEK);
+        System.out.println(calendar.get(Calendar.MONTH));
     }
 
 }
