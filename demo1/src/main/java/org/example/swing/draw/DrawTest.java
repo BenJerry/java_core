@@ -20,7 +20,7 @@ public class DrawTest {
 
 class DrawFrame extends JFrame {
     public DrawFrame() {
-        add(new DrawComponent());
+        add(new DrawComponent());    // 将组件添加到窗口当中
         pack();    // 调整窗口大小，要考虑其组件的首选大小，如果不执行，内部组件无法撑起窗口
     }
 }
@@ -59,6 +59,10 @@ class DrawComponent extends JComponent {
         g2.draw(circle);
     }
 
+    /**
+     * 设定组件的大小
+     * @return
+     */
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(DEFAULT_WIDTH, DEFAULT_HEIGHT);
