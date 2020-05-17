@@ -1,5 +1,7 @@
 package org.example.swing.mouse;
 
+import org.example.swing.utils.TestUtils;
+
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicTabbedPaneUI;
 import javax.swing.plaf.basic.BasicTreeUI;
@@ -109,6 +111,10 @@ public class MouseComponent extends JComponent {
                 setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
             }
         }
+    }
+
+    public static void main(String[] args) {
+        TestUtils.testForSwingClass(new JFrame(), new MouseComponent());
     }
 
 }
